@@ -1,6 +1,17 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title><![CDATA[elasticsearch集群配置]]></title>
+    <url>%2F2017%2F10%2F05%2Felasticsearch%E9%9B%86%E7%BE%A4%E9%85%8D%E7%BD%AE%2F</url>
+    <content type="text"><![CDATA[编辑config/elasticsearch.yml master配置 http.cors.enabled: truehttp.cors.allow-origin: “*” cluster.name: elasticsearchnode.name: masternode.master: true network.host: 127.0.0.1 slave配置 cluster.name: elasticsearchnode.name: slavenode.master: false network.host: 127.0.0.1http.port: 9201 discovery.zen.ping.unicast.hosts: [“127.0.0.1”]]]></content>
+      <categories>
+        <category>elasticsearch</category>
+      </categories>
+      <tags>
+        <tag>elasticsearch集群配置</tag>
+      </tags>
+  </entry>
+  <entry>
     <title><![CDATA[hexo 安装]]></title>
     <url>%2F2017%2F10%2F02%2Fhello-world%2F</url>
     <content type="text"><![CDATA[Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any problems when using Hexo, you can find the answer in troubleshooting or you can ask me on GitHub. Quick StartCreate a new post1$ hexo new "My New Post" More info: Writing Run server1$ hexo server More info: Server Generate static files1$ hexo generate More info: Generating Deploy to remote sites1$ hexo deploy More info: Deployment]]></content>
