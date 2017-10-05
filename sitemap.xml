@@ -3,12 +3,22 @@
 
     <sitemap>
         <loc>http://december183.github.io/post-sitemap.xml</loc>
-        <lastmod>2017-10-01T17:06:34.108Z</lastmod>
+        <lastmod>2017-10-05T14:06:03.932Z</lastmod>
     </sitemap>
 
     <sitemap>
         <loc>http://december183.github.io/page-sitemap.xml</loc>
         <lastmod>2017-10-01T17:33:53.880Z</lastmod>
+    </sitemap>
+
+    <sitemap>
+        <loc>http://december183.github.io/category-sitemap.xml</loc>
+        <lastmod>2017-10-05T14:06:03.932Z</lastmod>
+    </sitemap>
+
+    <sitemap>
+        <loc>http://december183.github.io/tag-sitemap.xml</loc>
+        <lastmod>2017-10-05T14:06:03.932Z</lastmod>
     </sitemap>
 
 </sitemapindex>
