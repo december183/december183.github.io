@@ -1,6 +1,17 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title><![CDATA[windows10 elasticsearch安装]]></title>
+    <url>%2F2017%2F10%2F05%2Felasticsearch%E5%AE%89%E8%A3%85%2F</url>
+    <content type="text"><![CDATA[windows10 elasticsearch安装一、安装java sdk百度搜索jdk,或直接去官网(http://www.oracle.com/technetwork/java/javase/downloads/jdk9-downloads-3848520.html)下载安装 二、安装elasticsearch1、官网(https://www.elastic.co/cn/downloads/elasticsearch)下载zip包 2、解压zip包 3、复制解压后的文件夹到安装目录，改名elasticsearch-master 4、cd elasticsearch-master/bin，运行elasticsearch.bat，启动elasticsearch 5、在浏览器中输入http://localhost:9200，出现下图说明elasticsearch正常启动 三、安装elasticsearch-head1、安装node，去node.js中文官网(http://nodejs.cn/)下载安装 2、设置npm中国镜像，推荐使用淘宝镜像 npm config set registry http://registry.npm.taobao.org/ 3、安装grunt npm install -g grunt-cli 4、安装elasticsearch-head 1)、进入https://github.com/mobz/elasticsearch-head，下载zip文件 2)、解压到指定文件夹，修改文件夹名称为elasticsearch-head 3)、cd elasticsearch-head,修改Gruntfile.js，在connect中添加hostname: ‘0.0.0.0’ 12345678910connect: &#123; server: &#123; options: &#123; hostname: &apos;0.0.0.0&apos;, port: 9100, base: &apos;.&apos;, keepalive: true &#125; &#125;&#125; 4)、修改elasticsearch配置，在elasticsearch-master/config/elasticsearch.yml文件中添加 http.cors.enabled: truehttp.cors.allow-origin: “*” 5)、执行npm install 6)、执行grunt server，出现下图说明elasticsearch-head正常启动 6)、在浏览器中输入http://localhost:9100，出现下图说明leasticsearch-head已经成功检测到elasticsearch服务 安装elasticsearch插件1、安装maven环境变量 1)、去官网(http://maven.apache.org/download.cgi)，下载zip包 2)、解压到指定文件夹，修改文件夹名称为maven 3)、配置环境变量，添加M2_HOME和MAVEN_HOME为maven的安装目录 4)、在系统变量path后面添加”;%M2_HOME%\bin” 2、安装ik中文分词插件，去github(https://github.com/medcl/elasticsearch-analysis-ik)，下载zip包 1)、解压到指定文件夹，解压后的文件夹内容如下图 2)、进入到解压后的插件目录，用maven打包，执行如下命令 mvn package 3)、打包成功后，将在当前目录生成一个target目录，如下图 4)、将target/release目录下的zip包复制，粘贴到elasticsearch-master/plugins，解压该zip插件包，将解压后的文件夹名称修改为ik，如下图 3、安装拼音分词插件(https://github.com/medcl/elasticsearch-analysis-pinyin)，安装步骤同ik插件一样]]></content>
+      <categories>
+        <category>elasticsearch</category>
+      </categories>
+      <tags>
+        <tag>elasticsearch安装</tag>
+      </tags>
+  </entry>
+  <entry>
     <title><![CDATA[elasticsearch集群配置]]></title>
     <url>%2F2017%2F10%2F05%2Felasticsearch%E9%9B%86%E7%BE%A4%E9%85%8D%E7%BD%AE%2F</url>
     <content type="text"><![CDATA[编辑config/elasticsearch.yml master配置 http.cors.enabled: truehttp.cors.allow-origin: “*” cluster.name: elasticsearchnode.name: masternode.master: true network.host: 127.0.0.1 slave配置 cluster.name: elasticsearchnode.name: slavenode.master: false network.host: 127.0.0.1http.port: 9201 discovery.zen.ping.unicast.hosts: [“127.0.0.1”]]]></content>
